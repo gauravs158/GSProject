@@ -1,7 +1,9 @@
 package utils;
 
+import java.util.HashMap;
 import java.util.Random;
 import org.testng.asserts.SoftAssert;
+import io.cucumber.java.Scenario;
 import io.restassured.path.json.JsonPath;
 
 public class GSTProjectUtils {
@@ -10,6 +12,8 @@ public class GSTProjectUtils {
 	JsonPath js;
 	String strResponse;
 	String className;
+	Heart heart;
+	private static final HashMap<Thread, Scenario> map = new HashMap<>();
 //	WriteDataToTextFile writeDataToTextFile;
 //	public static void main(String[] args) {
 //		System.out.println(getFileCounter(53));
@@ -22,6 +26,7 @@ public class GSTProjectUtils {
 	
 	public void validateResponseStatusCode(String className, Heart heart) {
 //		writeDataToTextFile = new WriteDataToTextFile();
+		this.heart = heart;
 		System.out.println("In validateResponseStatusCode checking heart.response: "+ heart.response.asPrettyString());
 		if(heart.response.getStatusCode()>=300) {
 			sa.assertEquals(heart.response.getStatusCode(), 200);
@@ -45,5 +50,12 @@ public class GSTProjectUtils {
 				}
 		}
 	}
+	
+	public static void putScenario(Scenario scenario) {
+        map.put(Thread.currentThread(), scenario);
+    }
 
+    public static Scenario getScenario() {
+        return map.get(Thread.currentThread());
+    }
 }

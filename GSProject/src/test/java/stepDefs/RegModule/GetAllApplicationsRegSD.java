@@ -16,7 +16,7 @@ public class GetAllApplicationsRegSD {
 
 	@When("the user hits GetAllApplication")
 	public void the_user_hits_get_all_application_api() {
-		heart.response = heart.blood.getGetAlertRegOpsObject().getRegAlertResponse(heart.govtAuthToken, GetAllAppPathParam, heart);
+		heart.response = heart.blood.getGetAllApplOpsObject().getRegAllApplResponse(heart.govtAuthToken, GetAllAppPathParam, heart);
 		System.out.println("In SD");
 		}
 //	}

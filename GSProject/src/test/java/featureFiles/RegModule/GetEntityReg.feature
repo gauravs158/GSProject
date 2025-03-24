@@ -1,5 +1,5 @@
 Feature: Registration module GetEntity API verification
-
+@Smoke
 Scenario: GetEntity API verification
 
 Given the user has the authToken

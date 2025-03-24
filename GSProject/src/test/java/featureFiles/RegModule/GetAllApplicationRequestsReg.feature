@@ -1,5 +1,6 @@
 Feature: Get All Application Requests - Registration Module
 
+@Smoke
 Scenario: Get All Application API verification
 
 Given the user has the authToken

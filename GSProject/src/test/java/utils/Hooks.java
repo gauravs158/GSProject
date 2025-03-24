@@ -32,15 +32,10 @@ public class Hooks {
     public void setUp(Scenario scenario) {
 		this.scenario = scenario;
 		System.out.println(scenario.getName());
-//		heart.scenario = scenario;
-//		logger.info("Setting up API test environment for the scenario: " + scenario.getName());
-//        logFilter = new CustomLogFilter();
-//        req = RestAssured.with();
 	}
 	
 	@After
     public void afterMethod() {
-		System.out.println("Reached afterMethod in Hooks");
 		Heart.decodedData = (String) Heart.getContext("data");
 		workspacePath = System.getProperty("user.dir");
 		folder = new File(workspacePath+ File.separator + folderPath);
@@ -72,7 +67,9 @@ public class Hooks {
 	            }
 	        } else {
 	        	if (myFile.exists()) {
-	        	overWriteFile(myFile, Heart.decodedData);}
+	        	overWriteFile(myFile, Heart.decodedData);
+
+	    		System.out.println("Reached afterMethod after creating file in Hooks");}
 	        	else createFile(myFile, Heart.decodedData);}
         }
 	}
@@ -97,14 +94,4 @@ public class Hooks {
             }
 		}
 	}
-	
-//	public Response getResponse() {
-//        return response;
-//    }
-//	
-////	@AfterStep
-//    public void setResponse(Response response) {
-//        this.response = heart.response;
-//        logger.info("API Response: " + response.getBody().asString());
-//    }
 }

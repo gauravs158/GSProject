@@ -14,4 +14,23 @@ public class CreateParamMap {
 		
 		return queryParams;
 	}
+	public static HashMap<String, String> getAllApplQueryParams(){
+
+		queryParams.put("state_cd", "07");
+		queryParams.put("start_tm", "2025-03-08:15:30");
+		queryParams.put("end_tm", "2025-03-08:16:15");
+		queryParams.put("aplty", "APLRG");
+		queryParams.put("action", "LST");
+		
+		return queryParams;
+	}
+	public static HashMap<String, String> getEntityQueryParams(){
+
+		queryParams.put("state_cd", "07");
+		queryParams.put("idty", "GSTIN");
+		queryParams.put("id", "07QPXXA1220A1ZN");
+		queryParams.put("action", "ENT");
+		
+		return queryParams;
+	}
 }
