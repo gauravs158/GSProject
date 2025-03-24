@@ -3,9 +3,9 @@ package utils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.restassured.response.Response;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,7 +14,6 @@ import org.apache.logging.log4j.Logger;
 
 public class Hooks {
 
-	private Response response;
 	String url;
 	private static final Logger logger = LogManager.getLogger(Hooks.class);
     private Scenario scenario;
@@ -32,69 +31,72 @@ public class Hooks {
 	@Before
     public void setUp(Scenario scenario) {
 		this.scenario = scenario;
-		heart.scenario = scenario;
+		System.out.println(scenario.getName());
+//		heart.scenario = scenario;
 //		logger.info("Setting up API test environment for the scenario: " + scenario.getName());
 //        logFilter = new CustomLogFilter();
 //        req = RestAssured.with();
 	}
 	
 	@After
-    public void tearDown(Scenario scenario) {
-//		workspacePath = System.getProperty("user.dir");
-//		folder = new File(workspacePath+ File.separator + folderPath);
-//		myFile = new File( folder, dateTimeString + "_" + heart.scenario.getName() + ".txt");
-//		System.out.println(myFile);
-//		if (scenario.isFailed()) {
-//            logger.error("Scenario Failed: " + scenario.getName());
-//            System.out.println("isFailed");
-//            if (!folder.exists()) {
-//	            if (folder.mkdir()) {
-//	            	createFile(myFile, heart.decodedData);
-//	            } else {
-//	                System.out.println("Failed to create folder.");
-//	                return;
-//	            }
-//	        } else {
-//	        	if (myFile.exists()) {
-//	        	overWriteFile(myFile, heart.decodedData);}
-//	        	else createFile(myFile, heart.decodedData);}
-//        } else {
-//            logger.info("Scenario Passed: " + scenario.getName());
-//            System.out.println("isPassed");
-//            if (!folder.exists()) {
-//	            if (folder.mkdir()) {
-//	            	createFile(myFile, heart.decodedData);
-//	            } else {
-//	                System.out.println("Failed to create folder.");
-//	                return;
-//	            }
-//	        } else {
-//	        	if (myFile.exists()) {
-//	        	overWriteFile(myFile, heart.decodedData);}
-//	        	else createFile(myFile, heart.decodedData);}
-//        }
+    public void afterMethod() {
+		System.out.println("Reached afterMethod in Hooks");
+		Heart.decodedData = (String) Heart.getContext("data");
+		workspacePath = System.getProperty("user.dir");
+		folder = new File(workspacePath+ File.separator + folderPath);
+		myFile = new File( folder, dateTimeString + "_" + scenario.getName() + ".txt");
+		System.out.println(myFile);
+		if (scenario.isFailed()) {
+            logger.error("Scenario Failed: " + scenario.getName());
+            System.out.println("isFailed");
+            if (!folder.exists()) {
+	            if (folder.mkdir()) {
+	            	createFile(myFile, Heart.decodedData);
+	            } else {
+	                System.out.println("Failed to create folder.");
+	                return;
+	            }
+	        } else {
+	        	if (myFile.exists()) {
+	        	overWriteFile(myFile, Heart.decodedData);}
+	        	else createFile(myFile, Heart.decodedData);}
+        } else {
+            logger.info("Scenario Passed: " + scenario.getName());
+            System.out.println("isPassed");
+            if (!folder.exists()) {
+	            if (folder.mkdir()) {
+	            	createFile(myFile, Heart.decodedData);
+	            } else {
+	                System.out.println("Failed to create folder.");
+	                return;
+	            }
+	        } else {
+	        	if (myFile.exists()) {
+	        	overWriteFile(myFile, Heart.decodedData);}
+	        	else createFile(myFile, Heart.decodedData);}
+        }
 	}
 	
-//	private void createFile(File myFile, String decodedData) {
-//		if (!myFile.exists()) {
-//            try (FileOutputStream fos = new FileOutputStream(myFile)) {
-//                fos.write(decodedData.getBytes());
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        } else {
-//            return;
-//        }
-//	}
-//	private void overWriteFile(File myFile, String decodedData) {
-//		if (!myFile.exists()) {
-//            try (FileOutputStream fos = new FileOutputStream(myFile)) {
-//                fos.write(decodedData.getBytes());
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//		}
-//	}
+	private void createFile(File myFile, String decodedData) {
+		if (!myFile.exists()) {
+            try (FileOutputStream fos = new FileOutputStream(myFile)) {
+                fos.write(decodedData.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            return;
+        }
+	}
+	private void overWriteFile(File myFile, String decodedData) {
+		if (!myFile.exists()) {
+            try (FileOutputStream fos = new FileOutputStream(myFile)) {
+                fos.write(decodedData.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+		}
+	}
 	
 //	public Response getResponse() {
 //        return response;

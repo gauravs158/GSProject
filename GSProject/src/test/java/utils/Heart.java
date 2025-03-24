@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import coreImplmtn.Blood;
 import coreImplmtn.CreateHeaders;
 import coreImplmtn.ReqResSpecBuilders;
@@ -15,8 +18,8 @@ public class Heart {
 	public Scenario scenario;
 	public Response response;
 	Brain brain;
-	String decodedData;
-	String responseData;
+	static String decodedData;
+	static String responseData;
 	public Heart() {
 		this.brain = new Brain();
 		blood = new Blood();
@@ -37,4 +40,18 @@ public class Heart {
 	public Base64Operations getBase64OperationsObject() {
 		return new Base64Operations();
 	}
+	private static final ThreadLocal<Map<String, Object>> scenarioContext = new ThreadLocal<>() {
+        @Override
+        protected Map<String, Object> initialValue() {
+            return new HashMap<>();
+        }
+    };
+
+    public static void setContext(String key, Object value) {
+        scenarioContext.get().put(key, value);
+    }
+
+    public static Object getContext(String key) {
+        return scenarioContext.get().get(key);
+    }
 }

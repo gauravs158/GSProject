@@ -5,18 +5,15 @@ import utils.GSTProjectUtils;
 import utils.Heart;
 
 public class GetAlertRegSD {
-	String authToken;
-	String url;
+	String getAlertPath = "govtapi/v0.2/alert";
 	Heart heart;
 	GSTProjectUtils gstpu;
 	public GetAlertRegSD(Heart heart) {
 		this.heart = heart;
-		this.url = heart.url;
 	}
 	
 	@Given("the user has the authToken")
 	public void the_user_has_the_auth_token() {
-		authToken = heart.govtAuthToken;
 	}
 
 	@Given("the user has the url")
@@ -25,7 +22,7 @@ public class GetAlertRegSD {
 
 	@When("the user hits GetAlertAPI")
 	public void the_user_hits_get_alert_api() {
-		heart.response = heart.blood.getGetAlertRegOpsObject().getRegAlertResponse(authToken, url, heart);
+		heart.response = heart.blood.getGetAlertRegOpsObject().getRegAlertResponse(heart.govtAuthToken, getAlertPath, heart);
 		System.out.println("In SD");
 	}
 
