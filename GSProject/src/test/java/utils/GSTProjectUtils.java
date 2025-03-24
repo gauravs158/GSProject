@@ -3,6 +3,8 @@ package utils;
 import java.util.HashMap;
 import java.util.Random;
 import org.testng.asserts.SoftAssert;
+
+import coreImplmtn.RegModule.Pojo.RegGetAlertPojo;
 import io.cucumber.java.Scenario;
 import io.restassured.path.json.JsonPath;
 
@@ -13,6 +15,7 @@ public class GSTProjectUtils {
 	String strResponse;
 	String className;
 	Heart heart;
+	RegGetAlertPojo rgap;
 	private static final HashMap<Thread, Scenario> map = new HashMap<>();
 //	WriteDataToTextFile writeDataToTextFile;
 //	public static void main(String[] args) {

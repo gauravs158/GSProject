@@ -1,5 +1,5 @@
 Feature: Common module GetAllCRNList API verification
-
+@Smoke
 Scenario: GetAllCRNList API verification
 
 Given the user has the authToken

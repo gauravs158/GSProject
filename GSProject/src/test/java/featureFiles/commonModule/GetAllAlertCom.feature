@@ -1,5 +1,5 @@
 Feature: BOServices module GetAllAlertCom API verification
-
+@Smoke
 Scenario: GetAllAlertCom API verification
 
 Given the user has the authToken
