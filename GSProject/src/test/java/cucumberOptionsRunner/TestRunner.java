@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/featureFiles",
-glue="stepDefs", monochrome=true,
+glue="stepDefs", monochrome=false,
 tags = "@Smoke",
 dryRun=true,
 plugin = {
