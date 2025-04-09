@@ -10,6 +10,7 @@ import io.cucumber.java.Scenario;
 import io.restassured.response.Response;
 public class Heart {
 
+	public static final Heart heart = new Heart();
 	public String url;
 	public String govtAuthToken;
 	public String commonAuthToken;
@@ -22,11 +23,15 @@ public class Heart {
 	static String responseData;
 	public Heart() {
 		this.brain = new Brain();
-		blood = new Blood();
-		ag = new AuthenticationGenerator();
+		this.blood = new Blood();
+		this.ag = new AuthenticationGenerator();
 		this.url = brain.getPropertiesData("APIURL");
 		this.govtAuthToken = ag.getGovtAPIAuthToken();
-		this.commonAuthToken = ag.getCommonAPIAuthToken();
+//		this.commonAuthToken = ag.getCommonAPIAuthToken();
+	}
+	
+	public static Heart returnHeartObject() {
+		return heart;
 	}
 	public GSTProjectUtils getGSTProjectUtilsObject() {
 		return new GSTProjectUtils();		
