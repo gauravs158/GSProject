@@ -17,9 +17,9 @@ public class ReqResSpecBuilders {
 		return request;
 	}
 
-	public RequestSpecification getCreatedCommonReqSpecBuilder(String url, String authToken) {
+	public RequestSpecification getCreatedCommonReqSpecBuilder(HashMap<String, String> paramMap, String url, String authToken) {
 		RequestSpecification reqSpec = new RequestSpecBuilder().setBaseUri(url)
-				.addQueryParams(CreateParamMap.getRegAlertQueryParams())
+				.addQueryParams(paramMap)
 				.addHeaders(CreateHeaders.getCommonHeader(authToken)).build();
 		RequestSpecification request = given().log().all().spec(reqSpec);
 		return request;
