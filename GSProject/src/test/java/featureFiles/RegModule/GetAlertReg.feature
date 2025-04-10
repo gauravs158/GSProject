@@ -1,5 +1,4 @@
 Feature: Registration module GetAlert API verification
-
 @Smoke
 Scenario: GetAlert API verification
 

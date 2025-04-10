@@ -36,7 +36,7 @@ public class AuthenticationGenerator {
 			authToken = js.getString("auth_token");
 			//System.out.println("GovtAPIAuthToken is :" + authToken);
 		} else {
-			System.out.println(response);
+			System.out.println("Error response is: "+response);
 		}
 		return authToken;
 	}
@@ -52,7 +52,7 @@ public class AuthenticationGenerator {
 		statusCode = js.getString("status_cd");
 		if (statusCode.equalsIgnoreCase("1")) {
 			authToken = js.getString("auth_token");
-			//System.out.println("CommonAPIAuthToken is :" + authToken);
+			System.out.println("CommonAPIAuthToken is :" + authToken);
 		} else {
 			System.out.println(response);
 		}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-03-24 07:29:27 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
 2025-03-24 08:35:25 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
 2025-03-24 22:03:01 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
@@ -6,3 +7,6 @@
 2025-03-25 07:12:58 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
 2025-03-25 07:14:49 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
 2025-04-05 13:20:12 [main] INFO  Hooks - Scenario Passed: GetAlert API verification
+=======
+
+>>>>>>> branch 'WorkSpace' of https://github.com/gauravs158/GSProject.git
