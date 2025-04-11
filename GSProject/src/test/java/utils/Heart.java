@@ -18,6 +18,7 @@ public class Heart {
 	public Blood blood;
 	public Scenario scenario;
 	public Response response;
+	public String num_files;
 	Brain brain;
 	static String decodedData;
 	static String responseData;
