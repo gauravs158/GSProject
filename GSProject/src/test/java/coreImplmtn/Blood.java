@@ -2,8 +2,8 @@ package coreImplmtn;
 
 import coreImplmtn.CommonModule.Ops.GetAllAlertComOps;
 import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
-import coreImplmtn.PaymentModuleOps.PaymentGetFileCountOps;
-import coreImplmtn.PaymentModuleOps.PaymentGetFileDetailsOps;
+import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
+import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
