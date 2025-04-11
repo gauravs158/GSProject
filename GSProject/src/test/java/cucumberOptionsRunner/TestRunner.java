@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/featureFiles",
 glue="stepDefs", monochrome=false,
-tags = "@Smoke",
+tags = "@ReturnFileCountDetails",
 dryRun=true,
 plugin = {
 	      "com.aventstack.chaintest.plugins.ChainTestCucumberListener:",
