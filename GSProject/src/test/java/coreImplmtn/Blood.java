@@ -2,8 +2,8 @@ package coreImplmtn;
 
 import coreImplmtn.CommonModule.Ops.GetAllAlertComOps;
 import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
-import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
-import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
+import coreImplmtn.PaymentModule.Pojo.GetPaymentFileCountPojo;
+import coreImplmtn.PaymentModule.Pojo.GetPaymentFileDetailsPojo;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
@@ -25,11 +25,11 @@ public class Blood {
 	public GetAllCRNListOps getAllCRNListOpsObject() {
 		return new GetAllCRNListOps();
 	}
-	public PaymentGetFileCountOps getPaymentGetFileCountOpsObject() {
-		return new PaymentGetFileCountOps();
+	public GetPaymentFileCountPojo getPaymentGetFileCountOpsObject() {
+		return new GetPaymentFileCountPojo();
 	}
-	public PaymentGetFileDetailsOps getPaymentGetFileDetailsOpsObject() {
-		return new PaymentGetFileDetailsOps();
+	public GetPaymentFileDetailsPojo getPaymentGetFileDetailsOpsObject() {
+		return new GetPaymentFileDetailsPojo();
 	}
 	
 }

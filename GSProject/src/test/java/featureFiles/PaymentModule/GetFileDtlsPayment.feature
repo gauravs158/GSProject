@@ -1,8 +1,8 @@
 Feature: Payment module GetFileDetails API verification
 
-Scenario: GetFileDetails API verificantion
+Scenario: GetFileDetails API verification
 
-Given the paymentuser has the authToken
+Given the user has the authToken
 And the user has the url
 When the user hits PaymentGetFileDetailsAPI
-Then the user gets success statusCode
+Then the user validates the fileDetails
