@@ -5,7 +5,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utils.Base64Operations;
 import utils.Heart;
-import static io.restassured.RestAssured.given;
+//import static io.restassured.RestAssured.given;
+import static Utils.RestUtils.performGet;
 import java.util.HashMap;
 import java.util.Map;
 import org.testng.asserts.SoftAssert;
@@ -34,6 +35,7 @@ public class GetFileCountPaymentSD {
 	ObjectMapper objectMapper = new ObjectMapper();
 	GetPaymentFileCountPojo getPaymentFileCountPojo;
 	SoftAssert sa = new SoftAssert();
+	String className;
 	public GetFileCountPaymentSD(Heart heart) {
 		this.heart = heart;
 		this.url = heart.url;
@@ -42,6 +44,7 @@ public class GetFileCountPaymentSD {
 
 	@When("the user hits PaymentGetFileCountAPI")
 	public void the_user_hits_get_file_count_api() {
+		className = "Payment - Get File Count";
 		headersMap.put("clientid", "l7xx0db0b857f0794c7b8de1e67f4cc71bb2");
 		headersMap.put("client-secret", "1a95c07cb91e4e42ba58bccac5aa7b5a");
 		headersMap.put("username", "GSTG2G99");
@@ -51,9 +54,11 @@ public class GetFileCountPaymentSD {
 		paramsMap.put("state_cd", "99");
 		paramsMap.put("file_type", "CIN");
 		paramsMap.put("date", "12-12-2023");
+		response = performGet(className, "https://devapi.gst.gov.in/govtapi/v0.2/payment", paramsMap, headersMap);
 //		heart.response = heart.blood.getPaymentGetFileCountOpsObject().getPaymentGetFileCountResponse(heart.govtAuthToken, paymentGetFilePathParam, heart);
-		response = given().log().all().baseUri("https://devapi.gst.gov.in/").headers(headersMap).params(paramsMap).when().get(paymentGetFilePathParam);
-		System.out.println("Response: " + response);
+		//----------------------------------------------------------------------------------------------------------------------------------------
+//		response = given().log().all().baseUri("https://devapi.gst.gov.in/").headers(headersMap).params(paramsMap).when().get(paymentGetFilePathParam);
+//		System.out.println("Response: " + response);
 		stringResponse = response.then().log().all().extract().asString();
 		System.out.println("Response: " + stringResponse);
 		jsonPath = new JsonPath(stringResponse);
