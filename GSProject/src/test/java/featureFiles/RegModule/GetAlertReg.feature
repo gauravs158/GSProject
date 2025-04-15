@@ -1,5 +1,5 @@
 Feature: Registration module GetAlert API verification
-@Smoke
+@testLogging
 Scenario: GetAlert API verification
 
 Given the user has the authToken

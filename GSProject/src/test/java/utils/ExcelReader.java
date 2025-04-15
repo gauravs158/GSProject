@@ -24,13 +24,13 @@ public class ExcelReader {
 			rowCounter = sheet.getLastRowNum();
 			columnCounter = sheet.getRow(0).getLastCellNum();
 			m1 = getCellDataWithHeader(sheet, rowCounter, columnCounter);
+			wb.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		return m1;
 	}
 	private static HashMap<String, Object> getCellDataWithHeader(XSSFSheet sheet, int rowCounter, int columnCounter) {
