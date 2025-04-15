@@ -8,7 +8,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-
 import java.util.Arrays;
 
 public class Setup implements ITestListener {
@@ -28,7 +27,7 @@ public class Setup implements ITestListener {
         ExtentTest test = extentReports.createTest("Test Name " + result.getTestClass().getName() + " - " + result.getMethod().getMethodName());
         extentTest.set(test);
     }
-
+    
     public void onTestFailure(ITestResult result) {
         ExtentReportManager.logFailureDetails(result.getThrowable().getMessage());
         String stackTrace = Arrays.toString(result.getThrowable().getStackTrace());
