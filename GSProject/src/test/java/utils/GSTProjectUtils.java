@@ -43,7 +43,7 @@ public class GSTProjectUtils {
 				System.out.println("heart.responseData is : "+Heart.responseData);
 				Heart.decodedData = heart.getBase64OperationsObject().getDecodedData(Heart.responseData);
 				System.out.println("heart.decodedData is : "+Heart.decodedData);
-				Heart.setContext("data", Heart.decodedData);
+//				Heart.setContext("data", Heart.decodedData);
 //				writeDataToTextFile.writeToTextFile(className, heart.decodedData);
 				sa.assertEquals(responseStatusCode, "1");
 			}else {
@@ -54,11 +54,11 @@ public class GSTProjectUtils {
 		}
 	}
 	
-	public static void putScenario(Scenario scenario) {
-        map.put(Thread.currentThread(), scenario);
-    }
-
-    public static Scenario getScenario() {
-        return map.get(Thread.currentThread());
-    }
+//	public static void putScenario(Scenario scenario) {
+//        map.put(Thread.currentThread(), scenario);
+//    }
+//
+//    public static Scenario getScenario() {
+//        return map.get(Thread.currentThread());
+//    }
 }

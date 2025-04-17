@@ -18,8 +18,7 @@ public class Brain {
 	
 	public String getPropertiesData(String propName) {
 		try {
-			FileInputStream f = new FileInputStream(
-			System.getProperty("user.dir") + "/src/test/resources/config.properties");
+			FileInputStream f = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/config.properties");
 			prop.load(f);
 			url = prop.getProperty("APIURL");
 			govtAPIusername = prop.getProperty("govtAPIusername");

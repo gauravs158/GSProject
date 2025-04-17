@@ -46,18 +46,18 @@ public class Heart {
 	public Base64Operations getBase64OperationsObject() {
 		return new Base64Operations();
 	}
-	private static final ThreadLocal<Map<String, Object>> scenarioContext = new ThreadLocal<>() {
-        @Override
-        protected Map<String, Object> initialValue() {
-            return new HashMap<>();
-        }
-    };
-
-    public static void setContext(String key, Object value) {
-        scenarioContext.get().put(key, value);
-    }
-
-    public static Object getContext(String key) {
-        return scenarioContext.get().get(key);
-    }
+//	private static final ThreadLocal<Map<String, Object>> scenarioContext = new ThreadLocal<>() {
+//        @Override
+//        protected Map<String, Object> initialValue() {
+//            return new HashMap<>();
+//        }
+//    };
+//
+//    public static void setContext(String key, Object value) {
+//        scenarioContext.get().put(key, value);
+//    }
+//
+//    public static Object getContext(String key) {
+//        return scenarioContext.get().get(key);
+//    }
 }
