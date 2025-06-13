@@ -11,6 +11,8 @@ import org.testng.asserts.SoftAssert;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import coreImplmtn.CreateEndpoints;
 import coreImplmtn.PaymentModule.Pojo.GetPaymentFileDetailsPojo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -37,9 +39,11 @@ public class GetFileDtlsPaymentSD {
 	JsonPath jsonPath;
 	Base64Operations bo = new Base64Operations();
 	ObjectMapper objectMapper = new ObjectMapper();
+	CreateEndpoints createEndpoints = new CreateEndpoints();
 	GetPaymentFileDetailsPojo getPaymentFileDetailsPojo;
 	SoftAssert sa = new SoftAssert();
 	String className;
+	String endpoint;
 	public GetFileDtlsPaymentSD(Heart heart) {
 		this.heart = heart;
 		this.authToken = heart.govtAuthToken;
@@ -57,7 +61,8 @@ public class GetFileDtlsPaymentSD {
 		paramsMap.put("file_type", "CIN");
 		paramsMap.put("date", "12-12-2023");
 		paramsMap.put("file_num", "32");
-		response = performGet(className, "https://devapi.gst.gov.in/govtapi/v0.2/payment", paramsMap, headersMap);
+		endpoint = createEndpoints.getCompleteURL("Payment_Get_File_Details");
+		response = performGet(className, endpoint, paramsMap, headersMap);
 //		response = given().log().all().baseUri("https://devapi.gst.gov.in/").headers(headersMap).params(paramsMap).when().get(paymentGetFilePathParam);
 //		System.out.println("Response: " + response);
 		stringResponse = response.then().log().all().extract().asString();

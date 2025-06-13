@@ -13,6 +13,8 @@ import org.testng.asserts.SoftAssert;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import coreImplmtn.CreateEndpoints;
 import coreImplmtn.PaymentModule.Pojo.GetPaymentFileCountPojo;
 
 public class GetFileCountPaymentSD {
@@ -33,9 +35,11 @@ public class GetFileCountPaymentSD {
 	JsonPath jsonPath;
 	Base64Operations bo = new Base64Operations();
 	ObjectMapper objectMapper = new ObjectMapper();
+	CreateEndpoints createEndpoints = new CreateEndpoints();
 	GetPaymentFileCountPojo getPaymentFileCountPojo;
 	SoftAssert sa = new SoftAssert();
 	String className;
+	String endpoint;
 	public GetFileCountPaymentSD(Heart heart) {
 		this.heart = heart;
 		this.url = heart.url;
@@ -54,7 +58,8 @@ public class GetFileCountPaymentSD {
 		paramsMap.put("state_cd", "99");
 		paramsMap.put("file_type", "CIN");
 		paramsMap.put("date", "12-12-2023");
-		response = performGet(className, "https://devapi.gst.gov.in/govtapi/v0.2/payment", paramsMap, headersMap);
+		endpoint = createEndpoints.getCompleteURL("Payment_Get_File_Count");
+		response = performGet(className, endpoint, paramsMap, headersMap);
 //		heart.response = heart.blood.getPaymentGetFileCountOpsObject().getPaymentGetFileCountResponse(heart.govtAuthToken, paymentGetFilePathParam, heart);
 		//----------------------------------------------------------------------------------------------------------------------------------------
 //		response = given().log().all().baseUri("https://devapi.gst.gov.in/").headers(headersMap).params(paramsMap).when().get(paymentGetFilePathParam);
