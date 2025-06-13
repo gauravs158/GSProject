@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/featureFiles",
 glue={"stepDefs"}, monochrome=true,
-tags = "@Payment",
+tags = "@Reg",
 dryRun=false,
 plugin = {
 	      "com.aventstack.chaintest.plugins.ChainTestCucumberListener:",
@@ -16,7 +16,7 @@ plugin = {
 	      "rerun:target/failed_scenarios.txt"
 }
 		)
-public class TestRunner  extends AbstractTestNGCucumberTests{
+public class TestRunner extends AbstractTestNGCucumberTests{
 	@Override
 	@DataProvider(parallel=false)
 	public Object[][] scenarios(){

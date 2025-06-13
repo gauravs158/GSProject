@@ -8,8 +8,8 @@ public class CreateParamMap {
 	public static HashMap<String, String> getRegAlertQueryParams(){
 
 		queryParams.put("state_cd", "99");
-		queryParams.put("start_tm", "2025-03-10:09:16");
-		queryParams.put("end_tm", "2025-03-10:10:16");
+		queryParams.put("start_tm", "2023-03-02:17:00");
+		queryParams.put("end_tm", "2023-03-02:18:00");
 		queryParams.put("action", "ALERT");
 		
 		return queryParams;

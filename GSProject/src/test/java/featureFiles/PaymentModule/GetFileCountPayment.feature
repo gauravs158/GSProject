@@ -1,5 +1,5 @@
 Feature: Payment module GetFileCount API verification
-@Payment
+@Payment @G2G
 Scenario: GetFileCount API verification
 
 Given the user has the authToken
