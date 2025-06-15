@@ -24,7 +24,4 @@ public class ReqResSpecBuilders {
 		RequestSpecification request = given().log().all().spec(reqSpec);
 		return request;
 	}
-//	public void getCreatedResSpecBuilder() {
-//		
-//	}
 }

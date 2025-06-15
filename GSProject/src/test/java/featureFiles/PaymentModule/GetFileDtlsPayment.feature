@@ -1,5 +1,5 @@
 Feature: Payment module GetFileDetails API verification
-@Payment
+@Payment @G2G
 Scenario: GetFileDetails API verification
 
 Given the user has the authToken
