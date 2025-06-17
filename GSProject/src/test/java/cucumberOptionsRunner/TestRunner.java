@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/featureFiles",
 glue={"stepDefs"}, monochrome=true,
-tags = "@Reg",
+tags = "@G2G",
 dryRun=false,
 plugin = {
 	      "com.aventstack.chaintest.plugins.ChainTestCucumberListener:",

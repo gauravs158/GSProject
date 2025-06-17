@@ -1,5 +1,5 @@
 Feature: Get All Application Requests - Registration Module
-@Reg
+@Reg @G2G
 Scenario Outline: Get All Application API verification
 
 Given the user has the authToken

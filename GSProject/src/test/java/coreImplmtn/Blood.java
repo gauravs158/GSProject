@@ -2,11 +2,13 @@ package coreImplmtn;
 
 import coreImplmtn.CommonModule.Ops.GetAllAlertComOps;
 import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
-import coreImplmtn.PaymentModule.Pojo.GetPaymentFileCountPojo;
-import coreImplmtn.PaymentModule.Pojo.GetPaymentFileDetailsPojo;
+import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
+import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
+import coreImplmtn.ReturnsModule.Ops.GetReturnFileCountOps;
+import coreImplmtn.ReturnsModule.Ops.GetReturnFileDetailsOps;
 
 public class Blood {
 
@@ -25,11 +27,17 @@ public class Blood {
 	public GetAllCRNListOps getAllCRNListOpsObject() {
 		return new GetAllCRNListOps();
 	}
-	public GetPaymentFileCountPojo getPaymentGetFileCountOpsObject() {
-		return new GetPaymentFileCountPojo();
+	public PaymentGetFileCountOps getPaymentGetFileCountOpsObject() {
+		return new PaymentGetFileCountOps();
 	}
-	public GetPaymentFileDetailsPojo getPaymentGetFileDetailsOpsObject() {
-		return new GetPaymentFileDetailsPojo();
+	public PaymentGetFileDetailsOps getPaymentGetFileDetailsOpsObject() {
+		return new PaymentGetFileDetailsOps();
+	}
+	public GetReturnFileCountOps getGetReturnFileCountOpsObject() {
+		return new GetReturnFileCountOps();
+	}
+	public GetReturnFileDetailsOps getGetReturnFileDetailsOps() {
+		return new GetReturnFileDetailsOps();
 	}
 	
 }

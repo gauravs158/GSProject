@@ -1,5 +1,5 @@
 Feature: Registration module GetEntity API verification
-@Reg
+@Reg @G2G
 Scenario Outline: GetEntity API verification
 
 Given the user has the authToken
