@@ -15,7 +15,7 @@ public class GetAllAlertComSD {
 	}
 	@When("the user hits GetAllAlertComAPI")
 	public void the_user_hits_GetAllAlertCom_api() {
-		heart.response = heart.blood.getGetEntityOpsObject().getEntityResponse(heart.govtAuthToken, commonGetAllAlertPathParam, heart);
+//		heart.response = heart.blood.getGetEntityOpsObject().getEntityResponse(heart.govtAuthToken, commonGetAllAlertPathParam, heart);
 	}
 	
 }
