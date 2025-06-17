@@ -30,7 +30,7 @@ public class GetReturnFileDetailsSD {
 	
 	@When("the user hits GetReturnFileDetailsAPI")
 	public void the_user_hits_GetReturnFileCountAPI() {
-		heart.response = heart.blood.getGetReturnFileDetailsOps().getReturnFileDetailsResponse(authToken, paramMap, getReturnFileCountPath, heart);
+		heart.response = heart.blood.getGetReturnFileDetailsOpsObject().getReturnFileDetailsResponse(authToken, paramMap, getReturnFileCountPath, heart);
 		System.out.println("In SD");		
 	}
 	

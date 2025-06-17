@@ -1,5 +1,8 @@
 package coreImplmtn;
 
+import coreImplmtn.AdjudicationModule.Ops.GetAdjudicationCaseDataDeterminationofTaxOps;
+import coreImplmtn.AdjudicationModule.Ops.GetAdjudicationCaseDataMFYOps;
+import coreImplmtn.AuditModule.Ops.GetAuditCaseDetailsOps;
 import coreImplmtn.CommonModule.Ops.GetAllAlertComOps;
 import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
 import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
@@ -36,8 +39,17 @@ public class Blood {
 	public GetReturnFileCountOps getGetReturnFileCountOpsObject() {
 		return new GetReturnFileCountOps();
 	}
-	public GetReturnFileDetailsOps getGetReturnFileDetailsOps() {
+	public GetReturnFileDetailsOps getGetReturnFileDetailsOpsObject() {
 		return new GetReturnFileDetailsOps();
+	}
+	public GetAdjudicationCaseDataMFYOps getGetAdjudicationCaseDataMFYOpsObject() {
+		return new GetAdjudicationCaseDataMFYOps();
+	}
+	public GetAdjudicationCaseDataDeterminationofTaxOps getGetAdjudicationCaseDataDeterminationofTaxOpsObject() {
+		return new GetAdjudicationCaseDataDeterminationofTaxOps();
+	}
+	public GetAuditCaseDetailsOps getAuditCaseDetailsOpsObject() {
+		return new GetAuditCaseDetailsOps();
 	}
 	
 }
