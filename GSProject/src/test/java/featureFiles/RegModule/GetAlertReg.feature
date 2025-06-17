@@ -1,5 +1,5 @@
 Feature: Registration module GetAlert API verification
-@Reg
+@Reg @G2G
 Scenario Outline: GetAlert API verification
 
 Given the user has the authToken

@@ -2,15 +2,14 @@ package coreImplmtn.PaymentModule.Ops;
 
 import java.util.HashMap;
 
-import coreImplmtn.CreateParamMap;
 import io.restassured.response.Response;
 import utils.Heart;
 
 public class PaymentGetFileCountOps {
-	HashMap<String, String> paramMap = CreateParamMap.getPaymentFileCountQueryParams();
-	public Response getPaymentGetFileCountResponse(String authToken, String paymentGetFilePathParam, Heart heart) {
+//	HashMap<String, String> paramMap = CreateParamMap.getPaymentFileCountQueryParams();
+	public Response getPaymentGetFileCountResponse(String authToken, HashMap<String, String> paramMap, String pathParam, Heart heart) {
 			heart.response = heart.getReqResSpecBuildersObject().getCreatedGovtReqSpecBuilder(paramMap, heart.url, authToken)
-					.when().log().all().get(paymentGetFilePathParam);
+					.when().log().all().get(pathParam);
 			return heart.response;
 	}
 }
