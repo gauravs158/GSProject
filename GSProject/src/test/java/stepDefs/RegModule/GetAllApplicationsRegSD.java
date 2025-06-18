@@ -29,4 +29,9 @@ public class GetAllApplicationsRegSD {
 		heart.response = heart.blood.getGetAllApplOpsObject().getRegAllApplResponse(heart.govtAuthToken, parameterMapping, GetAllAppPathParam, heart);
 		System.out.println("In SD");
 		}	
+
+	@Then("the user gets success statusCode for GetAllApplicationRequests API")
+	public void the_user_gets_success_status_code() {
+		heart.getGSTProjectUtilsObject().validateResponseStatusCode(this.getClass().getName(), heart);
+	}
 }

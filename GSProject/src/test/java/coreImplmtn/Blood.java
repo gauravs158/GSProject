@@ -7,6 +7,8 @@ import coreImplmtn.CommonModule.Ops.GetAllAlertComOps;
 import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
 import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
 import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
+import coreImplmtn.PaymentModule.Ops.PaymentReconOps;
+import coreImplmtn.RegModule.Ops.GetARNUpdateApproveRegOps;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
@@ -62,4 +64,11 @@ public class Blood {
 		return new GetRecordFileOps();
 	}
 	
+	public GetARNUpdateApproveRegOps getGetARNUpdateApproveRegOpsObject() {
+		return new GetARNUpdateApproveRegOps();
+	}
+	
+	public PaymentReconOps getPaymentReconOpsObject() {
+		return new PaymentReconOps();
+	}
 }

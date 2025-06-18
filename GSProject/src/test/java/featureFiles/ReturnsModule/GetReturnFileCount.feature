@@ -5,8 +5,7 @@ Scenario Outline: User is able to get the Return File Count for the mentioned da
 Given the user has the authToken
 And the user create ReturnFileCount parameter list with <state_cd>, <type>, <date>, <action>
 When the user hits GetReturnFileCountAPI
-Then the user receives success statusCode
-#And the user validates the responseData for number of fileCounts
+Then the user receives success statusCode for GetReturnFileCountAPI
 
 Examples: 
 
