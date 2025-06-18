@@ -10,6 +10,8 @@ import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
+import coreImplmtn.ReturnsModule.Ops.GetRecordFileOps;
+import coreImplmtn.ReturnsModule.Ops.GetReturnComparisionReportOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnFileCountOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnFileDetailsOps;
 
@@ -50,6 +52,14 @@ public class Blood {
 	}
 	public GetAuditCaseDetailsOps getAuditCaseDetailsOpsObject() {
 		return new GetAuditCaseDetailsOps();
+	}
+	
+	public GetReturnComparisionReportOps getGetReturnComparisionReportOpsObject() {
+		return new GetReturnComparisionReportOps();
+	}
+	
+	public GetRecordFileOps getGetRecordFileOpsObject() {
+		return new GetRecordFileOps();
 	}
 	
 }
