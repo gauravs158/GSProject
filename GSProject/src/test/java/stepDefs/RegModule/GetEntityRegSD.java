@@ -30,5 +30,10 @@ public class GetEntityRegSD {
 		heart.response = heart.blood.getGetEntityOpsObject().getEntityResponse(heart.govtAuthToken, parameterMapping, GetEntityPathParam, heart);
 		System.out.println("In SD");
 	}
+
+	@Then("the user gets success statusCode for GetEntityAPI")
+	public void the_user_gets_success_status_code() {
+		heart.getGSTProjectUtilsObject().validateResponseStatusCode(this.getClass().getName(), heart);
+	}
 	
 }
