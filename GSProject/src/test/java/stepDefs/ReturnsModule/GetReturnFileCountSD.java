@@ -36,9 +36,4 @@ public class GetReturnFileCountSD {
 	public void the_user_receives_success_statusCode() {
 		heart.getGSTProjectUtilsObject().validateResponseStatusCode(this.getClass().getName(), heart);
 	}
-	
-//	@And("the user validates the responseData for number of fileCounts")
-//	public void the_user_validates_responseData_for_number_of_files() {
-//		
-//	}
 }

@@ -28,7 +28,5 @@ public class GetAllApplicationsRegSD {
 		System.out.println("the_user_hits_get_all_application_api method");
 		heart.response = heart.blood.getGetAllApplOpsObject().getRegAllApplResponse(heart.govtAuthToken, parameterMapping, GetAllAppPathParam, heart);
 		System.out.println("In SD");
-		}
-//	}
-	
+		}	
 }
