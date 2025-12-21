@@ -9,7 +9,5 @@ Then the user gets success statusCode
 
 Examples: 
 
-|	state_cd	| start_tm					|	end_tm						|	action	|
-|	99				|	2023-03-02:17:00	|	2023-03-02:18:00	|	ALERT		|
-#|
-#|
+|	state_cd	| start_tm				|	end_tm				|	action	|
+|	99			|	2023-03-02:17:00	|	2023-03-02:18:00	|	ALERT	|

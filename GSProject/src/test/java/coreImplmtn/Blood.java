@@ -16,6 +16,12 @@ import coreImplmtn.ReturnsModule.Ops.GetRecordFileOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnComparisionReportOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnFileCountOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnFileDetailsOps;
+import coreImplmtn.RfndModule.Ops.GetAllApplicationDetailsOps;
+import coreImplmtn.RfndModule.Ops.GetAllApplicationDetailsRFD10Ops;
+import coreImplmtn.RfndModule.Ops.GetAllApplicationListOps;
+import coreImplmtn.RfndModule.Ops.GetBankValidationStatusOps;
+import coreImplmtn.RfndModule.Ops.GetCaseDataOps;
+import coreImplmtn.RfndModule.Ops.GetStatementDetailOps;
 
 public class Blood {
 
@@ -54,21 +60,35 @@ public class Blood {
 	}
 	public GetAuditCaseDetailsOps getAuditCaseDetailsOpsObject() {
 		return new GetAuditCaseDetailsOps();
-	}
-	
+	}	
 	public GetReturnComparisionReportOps getGetReturnComparisionReportOpsObject() {
 		return new GetReturnComparisionReportOps();
-	}
-	
+	}	
 	public GetRecordFileOps getGetRecordFileOpsObject() {
 		return new GetRecordFileOps();
-	}
-	
+	}	
 	public GetARNUpdateApproveRegOps getGetARNUpdateApproveRegOpsObject() {
 		return new GetARNUpdateApproveRegOps();
-	}
-	
+	}	
 	public PaymentReconOps getPaymentReconOpsObject() {
 		return new PaymentReconOps();
+	}	
+	public GetAllApplicationListOps getAllApplicationListOpsObject() {
+		return new GetAllApplicationListOps();
+	}	
+	public GetAllApplicationDetailsOps getAllApplicationDetailsOpsObject() {
+		return new GetAllApplicationDetailsOps();
+	}	
+	public GetAllApplicationDetailsRFD10Ops getAllApplicationDetailsRFD10OpsObject() {
+		return new GetAllApplicationDetailsRFD10Ops();
+	}	
+	public GetBankValidationStatusOps getBankValidationStatusOpsObject() {
+		return new GetBankValidationStatusOps();
+	}	
+	public GetStatementDetailOps getStatementDetailOpsObject() {
+		return new GetStatementDetailOps();
+	}	
+	public GetCaseDataOps getCaseDataOpsObject() {
+		return new GetCaseDataOps();
 	}
 }
