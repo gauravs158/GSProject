@@ -8,9 +8,12 @@ import coreImplmtn.CommonModule.Ops.GetAllCRNListOps;
 import coreImplmtn.PaymentModule.Ops.PaymentGetFileCountOps;
 import coreImplmtn.PaymentModule.Ops.PaymentGetFileDetailsOps;
 import coreImplmtn.PaymentModule.Ops.PaymentReconOps;
+import coreImplmtn.RegModule.Ops.CompLevyExcludTPBasedAATORegOps;
+import coreImplmtn.RegModule.Ops.CompulsoryWithdrawalTPResponsetoSCNRegOps;
 import coreImplmtn.RegModule.Ops.GetARNUpdateApproveRegOps;
 import coreImplmtn.RegModule.Ops.GetAlertRegOps;
 import coreImplmtn.RegModule.Ops.GetAllApplicationsOps;
+import coreImplmtn.RegModule.Ops.GetApplnReqAmendmentCoreSubmitRegOps;
 import coreImplmtn.RegModule.Ops.GetEntityOps;
 import coreImplmtn.ReturnsModule.Ops.GetRecordFileOps;
 import coreImplmtn.ReturnsModule.Ops.GetReturnComparisionReportOps;
@@ -27,6 +30,15 @@ public class Blood {
 
 	public GetAlertRegOps getGetAlertRegOpsObject() {
 		return new GetAlertRegOps();
+	}
+	public CompLevyExcludTPBasedAATORegOps getCompLevyExcludTPBasedAATORegOpsObject() {
+		return new CompLevyExcludTPBasedAATORegOps();
+	}
+	public CompulsoryWithdrawalTPResponsetoSCNRegOps compulsoryWithdrawalTPResponsetoSCNRegOpsObject() {
+		return new CompulsoryWithdrawalTPResponsetoSCNRegOps();
+	}
+	public GetApplnReqAmendmentCoreSubmitRegOps getApplnReqAmendmentCoreSubmitRegOpsObject() {
+		return new GetApplnReqAmendmentCoreSubmitRegOps();
 	}
 	public GetAllApplicationsOps getGetAllApplOpsObject() {
 		return new GetAllApplicationsOps();
